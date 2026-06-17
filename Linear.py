@@ -43,7 +43,6 @@ r2 = r2_score(y_test,y_pred)
 print("\nModel Evaluation")
 print("Mean Squared Error (MSE) : ",mse)
 print("R2 Score : ",r2)
-print("Model Accuracy (Approx.): ",round(r2*100,2),"%")
 
 # user prediction
 hours = float(input("\nEnter Hours Studied : "))
