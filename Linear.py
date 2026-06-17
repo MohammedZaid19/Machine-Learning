@@ -6,7 +6,7 @@ from sklearn.metrics import mean_squared_error , r2_score
 
 # Step 2 Create Dataset
 data = {
-    "Hours Studied" : [1,2,3,4,5,6,7,8,9,10],
+    "Hours_Studied" : [1,2,3,4,5,6,7,8,9,10],
     "Marks" : [20,25,35,40,50,60,70,75,85,95]
 }
 df = pd.DataFrame(data)
@@ -14,7 +14,7 @@ print("Dataset : ")
 print(df)
 
 # Step 3 : Separate features (X) and Target (Y)
-X = df[["Hours Studied"]]
+X = df[["Hours_Studied"]]
 y = df["Marks"]
 
 # Step 4 : Split Data
@@ -43,13 +43,19 @@ r2 = r2_score(y_test,y_pred)
 print("\nModel Evaluation")
 print("Mean Squared Error (MSE) : ",mse)
 print("R2 Score : ",r2)
+print("Model Accuracy (Approx.): ",round(r2*100,2),"%")
 
-# Step 9 : Predict for New Data
+# user prediction
 hours = float(input("\nEnter Hours Studied : "))
-predicted_marks = model.predict([[hours]])
+
+# Step 9 : Create DataFrame with same feature name
+new_data = pd.DataFrame({"Hours_Studied" : [hours]})
+predicted_marks = model.predict(new_data)
 print(f"Predicted Marks for {hours} hours of Study : {predicted_marks[0]:.2f}")
 
 # Step 10 Display Learned Equation
 print("\nModel Parameters")
 print("Slope (Coefficient) : ",model.coef_[0])
 print("Intercept : ",model.intercept_)
+print("\nLinear Regression Equation:")
+print(f"Marks = {model.coef_[0]:.4f} * Hours_Studied")
