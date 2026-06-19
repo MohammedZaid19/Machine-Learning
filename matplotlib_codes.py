@@ -1,4 +1,4 @@
-import matplotlib.pyplot as plt
+# import matplotlib.pyplot as plt
 # import numpy as np
 # xpoints = np.array([1,8])
 # ypoints = np.array([3,10])
@@ -6,6 +6,7 @@ import matplotlib.pyplot as plt
 # plt.pie(y)
 # plt.show()
 # Scatterchart
+# import matplotlib.pyplot as plt
 # x = [1,2,3,4,5]
 # y = [10,15,20,25,30]
 # plt.scatter(x,y)
@@ -14,6 +15,7 @@ import matplotlib.pyplot as plt
 # plt.ylabel("Y Values")
 # plt.show()
 # bar Chart
+# import matplotlib.pyplot as plt
 # students = ["A","B","C","D","E"]
 # marks = [80,70,90,60,65]
 # plt.bar(students,marks)
@@ -22,10 +24,11 @@ import matplotlib.pyplot as plt
 # plt.ylabel("Marks")
 # plt.show()
 # Line chart
-days = [1,2,3,4,5]
-sales = [100,150,120,180,200]
-plt.plot(days,sales,marker='o')
-plt.title("Line Chart")
-plt.xlabel("Days")
-plt.ylabel("Sales")
-plt.show()
+# import matplotlib.pyplot as plt
+# days = [1,2,3,4,5]
+# sales = [100,150,120,180,200]
+# plt.plot(days,sales,marker='o')
+# plt.title("Line Chart")
+# plt.xlabel("Days")
+# plt.ylabel("Sales")
+# plt.show()
