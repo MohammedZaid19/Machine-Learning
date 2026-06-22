@@ -2,36 +2,29 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
-import warnings as wr
-wr.filterwarnings('ignore')
-df = pd.read_csv('D:/Downloads/archive (4)/mail_data.csv')
-# print(df.head())
-# print(df.shape)
-# print(df.info())
+
+df = pd.read_csv('D:/Downloads/ev_market_2026.csv')
+
+print(df.head())
+print(df.shape)
+print(df.info())
 print(df.isnull().sum())
-# print(df.describe())
-# print(df.describe().T)
-print(df.columns.tolist())
-df.drop_duplicates(inplace=True)
 print(df.duplicated().sum())
+print(df.describe())
 
-# category = df['Category'].value_counts()
-# plt.figure(figsize=(8,6))
-# plt.bar(category.index,category,color='blue')
-# plt.title("Email Spam")
-# plt.xlabel("Category")
-# plt.ylabel("Messages")
-# plt.show()
+quality_counts = df['brand'].value_counts()
+plt.figure(figsize=(8,6))
+plt.bar(quality_counts.index, quality_counts, color='red')
+plt.title('count plot as quality')
+plt.xlabel('brand name')
+plt.ylabel('count')
+plt.show()
 
-# plt.figure(figsize=(10,8))
-# sns.swarmplot(x="Category",y="Message",data=df,palette='viridis')
-# plt.title("Swarmplot for email spam detection")
-# plt.xlabel("Category")
-# plt.ylabel("Messages")
-# plt.show()
+sns.set_palette("Pastel1")
+plt.figure(figsize=(6,10))
+sns.pairplot(df)
+plt.suptitle("hi lol")
+plt.show()
 
-
-
-sns.boxplot(x='Category',y='Message',data=df)
-# plt.suptitle('Pair plot for dataframe')
+sns.boxplot(x='model',y='year',data=df)
 plt.show()
